@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Лабораторная работа №3 - Старт</title>
+    <h:outputStylesheet name="css/style.css"/>
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="container">
+            <header class="header">
+                <div class="title">Рязанов Григорий Алексеевич</div>
+                <div class="subtitle">Группа: P3211 • Вариант: 666</div>
+            </header>
+
+            <div class="card" style="text-align: center; margin-top: 32px;">
+                <h2>Текущее время</h2>
+
+                <!-- время отдельным блоком -->
+                <div style="margin-top: 12px; margin-bottom: 24px;">
+                    <h:outputText id="serverTime" value="#{timeBean.currentTime}"/>
+                </div>
+
+                <!-- кнопка ниже -->
+                <p:commandButton value="Перейти к приложению"
+                                 action="to-main"
+                                 styleClass="btn primary"/>
+
+                <!-- поллинг можно оставить здесь -->
+                <p:poll interval="9" update="serverTime"/>
+            </div>
+        </div>
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'ru.grisha.web'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repository.primefaces.org/' }
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'jakarta.platform:jakarta.jakartaee-web-api:10.0.0'
+    implementation 'org.primefaces:primefaces:14.0.0:jakarta'
+    implementation 'org.hibernate.orm:hibernate-core:6.4.1.Final'
+    implementation 'org.postgresql:postgresql:42.7.0'
+}

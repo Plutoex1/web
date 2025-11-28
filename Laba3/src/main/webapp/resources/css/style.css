@@ -1,0 +1,87 @@
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --primary: #3b82f6;
+    --primary-700: #2563eb;
+    --border: #1f2937;
+    --success: #2e7d32;
+    --danger: #c62828;
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background: linear-gradient(180deg, #0b1220, #0f172a 30%, #0f172a 100%);
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.header { text-align: center; margin-bottom: 24px; }
+.title { font-size: 1.6rem; font-weight: 700; }
+.subtitle { color: var(--muted); margin-top: 4px; }
+
+.grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; margin-top: 16px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.card h2 { font-size: 1.1rem; margin: 0 0 12px 0; }
+.form { display: grid; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 60px 1fr; gap: 8px; align-items: center; }
+.form-actions { display: flex; gap: 10px; margin-top: 6px; }
+
+.x-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.x-list .ui-button, .btn { font-size: 0.9rem; }
+
+/* !!! ДОБАВЛЕНО: стиль для выбранной кнопки X !!! */
+.x-selected {
+    background: var(--primary) !important;
+    border-color: var(--primary-700) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+    font-weight: bold !important;
+}
+
+.graph-wrap { display: grid; place-items: center; }
+svg {
+    background: radial-gradient(120% 100% at 50% 0%, rgba(59,130,246,.07), transparent 60%), #0b1020;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#main-form\:result-table .ui-datatable-header,
+#main-form\:result-table .ui-datatable-footer,
+#main-form\:result-table .ui-paginator {
+    background: var(--card);
+    border: none;
+}
+#main-form\:result-table .ui-datatable-thead th,
+#main-form\:result-table .ui-datatable-tbody td {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: center;
+}
+#main-form\:result-table .ui-datatable-thead th {
+    background: rgba(59,130,246,.09);
+    border-color: var(--border) !important;
+}
+#main-form\:result-table .ui-datatable-tbody tr:hover td {
+    background: rgba(59,130,246,.06);
+}
+#main-form\:result-table .ui-paginator .ui-state-active {
+    background: var(--primary) !important;
+    border-color: var(--primary-700) !important;
+}
+
+.hit { color: var(--success) !important; font-weight: bold; }
+.miss { color: var(--danger) !important; font-weight: bold; }
